@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [react(),
   ],
   server: {
+    base: '/prvt2/',
     proxy: {
       '/api': 'http://localhost:8080',
       '/assets': 'http://localhost:8080',
