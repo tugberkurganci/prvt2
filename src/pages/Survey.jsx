@@ -6,6 +6,7 @@ import SurveyDetail from '../components/SurveyDetail';
 import http from '../lib/http';
 import '../components/SurveyStyles.css';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 Modal.setAppElement('#root'); // Ensure this matches your root element ID
 
@@ -30,7 +31,7 @@ export default function Survey() {
 
   const handleSurveyUpdated = async () => {
     try {
-      const response = await http.get('/surveys');
+      const response = await http.get('/api/surveys');
       setSurveys(response.data);
     } catch (error) {
       console.error('Failed to update surveys', error);
@@ -53,6 +54,11 @@ export default function Survey() {
     handleSurveyUpdated();
     handleSurveySelected(selectedSurvey);
     setOnSubmit(false)
+
+axios.get('/api/test') // Proxy ayarları ile yönlendirilmelidir
+  .then(response => console.log(response.data))
+  .catch(error => console.error('Proxy test error:', error));
+
   }, [onSubmit]);
 
   useEffect(() => {
