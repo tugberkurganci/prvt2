@@ -89,7 +89,6 @@ const HomePage = () => {
             <div key={survey.id} className="survey-item">
               <h3>Survey : {survey.surveyTitle}</h3>
               <p>Survey Content: {survey.surveyDescription}</p>
-              <p>Survey Date: {survey.creationTime}</p>
               
               <button onClick={() => handleSurveyClick(survey)} className="mt-2 custom-green-button">Comment and Vote</button>
              

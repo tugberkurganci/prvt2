@@ -24,7 +24,7 @@ const EventDetail = ({ event, onEventUpdated, setSelectedEvent, handleEventSelec
     <div>
       <h3>Event name: {event.eventName}</h3>
       <p>Description: {event.eventDescription}</p>
-      <p><strong>Time:</strong> {new Date(event.eventTime).toLocaleString()}</p>
+      <p><strong>Time:</strong> {new Date(event.eventTime).toLocaleString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).replace(',', '')}</p>
       <h4>Participants</h4>
       <ListGroup>
         {event.userIds?.map((id, index) => (
