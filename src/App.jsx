@@ -24,7 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/employee" element={<EmployeeRoute><Employee /></EmployeeRoute>} />
-            <Route path="/request" element={<RequestComponent />} />
+            <Route path="/request" element={<EmployeeRoute><RequestComponent /></EmployeeRoute>} />
             <Route path="/survey-event" element={<EmployeeRoute><SurveyEvent /></EmployeeRoute>} />
             <Route path="/pharmacy-view" element={<PharmacyView />} />
             <Route path="/taxi-call" element={<TaxiCall />} />
