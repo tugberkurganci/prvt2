@@ -9,7 +9,7 @@ const http = axios.create({
 http.interceptors.request.use((config) => {
   if (authToken) {
     config.headers["Authorization"] = `Bearer ${authToken}`;
-  }
+  }  console.log('Request URL:', config.url); 
     return config;
 })
 let authToken = loadToken();
