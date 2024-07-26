@@ -2,7 +2,9 @@ import axios from "axios";
 import { loadToken, storeToken } from "../store/storage";
 
 
-const http = axios.create();
+const http = axios.create({
+  baseURL: `https://prvt.onrender.com/api`,
+});
 
 http.interceptors.request.use((config) => {
   if (authToken) {
