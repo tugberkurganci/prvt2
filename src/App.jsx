@@ -18,7 +18,7 @@ import EmployeeRoute from './routes/EmployeeRoute';
 function App() {
   return (
     <>
-      <Router >
+      <Router  basename="/prvt2">
         <CustomNavbar />
         <Container className="mt-4">
           <Routes>
