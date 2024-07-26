@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../components/SurveyStyles.css'; // Import the CSS file
+import http from '../lib/http';
 
 const TaxiCall = () => {
   const [latitude, setLatitude] = useState(null);
@@ -28,7 +29,7 @@ const TaxiCall = () => {
   const handleSearch = async () => {
     if (latitude && longitude) {
       try {
-        const response = await axios.get(`/api/searchNearby`, {
+        const response = await http.get(`/api/searchNearby`, {
           params: {
             latitude,
             longitude,

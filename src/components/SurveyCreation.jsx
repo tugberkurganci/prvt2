@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import './SurveyStyles.css';
+import http from '../lib/http';
 
 const validationSchema = Yup.object({
   surveyTitle: Yup.string().required('Title is required'),
@@ -17,7 +18,7 @@ function SurveyCreation({ onSurveyCreated, onSubmit }) {
   const handleCreateSurvey = async (values, { resetForm }) => {
     try {
       onSubmit(true);
-      const response = await axios.post('/api/surveys', { ...values, creatorId: auth.id });
+      const response = await http.post('/api/surveys', { ...values, creatorId: auth.id });
       onSurveyCreated(response.data); // Notify parent of new survey
       resetForm();
       alert('Survey created successfully!');
