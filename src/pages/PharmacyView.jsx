@@ -34,7 +34,7 @@ function PharmacyView() {
   }, [selectedDistrict]);
 
 
-  useEffect(() => { console.log(apiKey) }, [apiKey]);
+  
   return (
     <div className="container">
       <h2 className="header">Nöbetçi Eczaneler</h2>
@@ -74,7 +74,7 @@ function PharmacyView() {
               <iframe
                width="300"
                 height="200"
-                //src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}=${pharmacy.loc}`}
+               src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}=${pharmacy.loc}`}
                 allowFullScreen
                 title={`Harita: ${pharmacy.name}`}
                 className="iframe"
