@@ -43,6 +43,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Wait for artifact
+        run: sleep 10s
+
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
