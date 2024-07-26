@@ -32,8 +32,8 @@ export default function CustomNavbar() {
           <Nav className="me-auto">
          {auth.role && auth.role === 'MANAGER' && (<Nav.Link as={Link} to="/employee">Employees</Nav.Link>)} 
             <Nav.Link as={Link} to="/request">Request</Nav.Link>
-           {auth.role && (auth.role !== 'EMPLOYEE') && ( <Nav.Link as={Link} to="/survey-event">Survey & Event</Nav.Link>)
-            (<Nav.Link as={Link} to="/register-vehicle">Register Vehicle</Nav.Link>)}
+          <Nav.Link as={Link} to="/survey-event">Survey & Event</Nav.Link>)
+            <Nav.Link as={Link} to="/register-vehicle">Register Vehicle</Nav.Link>
             <Nav.Link as={Link} to="/pharmacy-view">Pharmacy View</Nav.Link>
             <Nav.Link as={Link} to="/taxi-call">Taxi Call</Nav.Link>
             
