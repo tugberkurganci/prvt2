@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Survey from './Survey';
 import './HomePage.css';
 import { useSelector } from 'react-redux';
+import { format } from 'date-fns';
+import { tr } from 'date-fns/locale';
 
 const HomePage = () => {
   const [services, setServices] = useState([]);
@@ -86,7 +88,7 @@ const HomePage = () => {
               <div key={event.id} className="event-item">
                 <h3>Event : {event.eventName}</h3>
                 <p>Event Content: {event.eventDescription}</p>
-                <p>Event Date: {event.eventTime}</p>
+                <p>Event Date: {format(new Date(event.eventTime), 'PPPpp', { locale: tr })}</p>
                 <p>Participants Number: {event.userIds.length}</p>
 
                 <button onClick={() => handleEventClick(event)} className="mt-2 custom-green-button">Join Event</button>
