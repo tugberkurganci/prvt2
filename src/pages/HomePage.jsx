@@ -22,9 +22,7 @@ const HomePage = () => {
       .catch(error => {
         console.error('Error fetching services:', error);
       });
-      axios.get('/api/test') // Proxy ayarları ile yönlendirilmelidir
-      .then(response => console.log(response.data))
-      .catch(error => console.error('Proxy test error:', error));
+      
 
     // Axios ile eventleri almak için GET isteği
     http.get('/api/user-events')
