@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css'
 import PharmacyView from './pages/PharmacyView';
 import TaxiCall from './pages/TaxiCall';
