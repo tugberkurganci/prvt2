@@ -30,7 +30,7 @@ export default function Survey() {
 
   const handleSurveyUpdated = async () => {
     try {
-      const response = await http.get('/api/surveys');
+      const response = await http.get('/surveys');
       setSurveys(response.data);
     } catch (error) {
       console.error('Failed to update surveys', error);
