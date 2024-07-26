@@ -1,14 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-import { fileURLToPath, URL } from "node:url";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),
-  ],
+  plugins: [react()],
+  base: '/prvt2/',  // GitHub Pages'de proje yolu
   server: {
-    base: '/prvt2/',
     proxy: {
       '/api': 'http://localhost:8080',
       '/assets': 'http://localhost:8080',
@@ -16,7 +14,16 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name][extname]',
+        chunkFileNames: 'chunks/[name].js',
+        entryFileNames: 'js/[name].js',
+      }
     }
   }
-})
+});
