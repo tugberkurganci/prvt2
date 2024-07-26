@@ -65,8 +65,9 @@ const HomePage = () => {
 
   return (
     <Container fluid className="homepage-container">
-      <h1 className="text-center">Welcome to the Home Page</h1>
-      <p className="text-center">This is the content of the home page.</p>
+   <h1 className="text-center">Ana Sayfaya Hoş Geldiniz</h1>
+<p className="text-center">Konut sitemizde size en iyi hizmeti sunmak için buradayız. Aşağıda etkinliklerimize, anketlerimize ve çeşitli hizmetlerimize ulaşabilirsiniz. Site sakinlerimiz için en iyi yaşam alanını oluşturmak adına sürekli çalışıyoruz.</p>
+
       <div className="d-flex justify-content-around my-1">
         <div className="event-container">
           <h2 className="text-center event-title">User Events</h2>
