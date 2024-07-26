@@ -3,7 +3,7 @@ import { loadToken, storeToken } from "../store/storage";
 
 
 const http = axios.create({
-  baseURL: "https://prvt.onrender.com/",
+  baseURL: "https://prvt.onrender.com",
 });
 
 http.interceptors.request.use((config) => {
