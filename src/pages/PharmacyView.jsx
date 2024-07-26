@@ -71,7 +71,7 @@ function PharmacyView() {
               <iframe
                 width="300"
                 height="200"
-                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_API_KEY}=${pharmacy.loc}`}
+                src={`https://www.google.com/maps/embed/v1/place?key=${JSON.stringify(process.env.REACT_APP_API_KEY)}=${pharmacy.loc}`}
                 allowFullScreen
                 title={`Harita: ${pharmacy.name}`}
                 className="iframe"
