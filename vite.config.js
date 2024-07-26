@@ -9,9 +9,7 @@ export default defineConfig({
   ],
   server: {
 
-    proxy: {
-      "/api": "https://prvt.onrender.com/",
-    }
+
 
   },
   base: "/prvt2/",

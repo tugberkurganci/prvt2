@@ -55,9 +55,7 @@ export default function Survey() {
     handleSurveySelected(selectedSurvey);
     setOnSubmit(false)
 
-axios.get('/api/test') // Proxy ayarları ile yönlendirilmelidir
-  .then(response => console.log(response.data))
-  .catch(error => console.error('Proxy test error:', error));
+
 
   }, [onSubmit]);
 
