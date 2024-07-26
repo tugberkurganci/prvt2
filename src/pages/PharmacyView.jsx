@@ -13,7 +13,7 @@ const districts = [
 function PharmacyView() {
   const [pharmacies, setPharmacies] = useState([]);
   const [selectedDistrict, setSelectedDistrict] = useState('Maltepe');
-  const apiKey = import.meta.env.REACT_APP_API_KEY_API_KEY;
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     async function fetchPharmacies() {
