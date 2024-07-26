@@ -12,7 +12,8 @@ const districts = [
 
 function PharmacyView() {
   const [pharmacies, setPharmacies] = useState([]);
-  const [selectedDistrict, setSelectedDistrict] = useState('Tuzla');
+  const [selectedDistrict, setSelectedDistrict] = useState('Maltepe');
+  const apiKey = import.meta.env.REACT_APP_API_KEY_API_KEY;
 
   useEffect(() => {
     async function fetchPharmacies() {
@@ -71,7 +72,7 @@ function PharmacyView() {
               <iframe
                 width="300"
                 height="200"
-                src={`https://www.google.com/maps/embed/v1/place?key=${JSON.stringify(process.env.REACT_APP_API_KEY)}=${pharmacy.loc}`}
+                src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}=${pharmacy.loc}`}
                 allowFullScreen
                 title={`Harita: ${pharmacy.name}`}
                 className="iframe"

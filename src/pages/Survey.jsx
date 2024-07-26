@@ -12,7 +12,7 @@ Modal.setAppElement('#root'); // Ensure this matches your root element ID
 
 export default function Survey() {
   const location = useLocation();
-
+let counter=0;
   const [selectedSurvey, setSelectedSurvey] = useState(location.state?.selectedSurvey || null);
   const [surveys, setSurveys] = useState([]);
   const [comments, setComments] = useState([]);
@@ -50,16 +50,21 @@ export default function Survey() {
   };
 
   useEffect(() => {
-    fetchComments(selectedSurvey);
-    handleSurveyUpdated();
-    handleSurveySelected(selectedSurvey);
-    setOnSubmit(false)
+    
+    if(counter>0){ fetchComments(selectedSurvey);
+      
+      handleSurveySelected(selectedSurvey);
+      setOnSubmit(false)}
+   
 
+    counter++
 
 
   }, [onSubmit]);
 
   useEffect(() => {
+    console.log(selectedSurvey)
+    handleSurveyUpdated();
     fetchComments(selectedSurvey);
   }, [selectedSurvey]);
 
