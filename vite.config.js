@@ -16,7 +16,7 @@ export default defineConfig({
   
   build: {
     outDir: 'assets',   // Build çıktısının 'dist' dizinine yapılmasını sağlar
-    assetsDir: '',     // Asset'leri kök dizine yerleştirir
+       // Asset'leri kök dizine yerleştirir
   }
 })// vite.config.js
 
